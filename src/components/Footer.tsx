@@ -1,5 +1,6 @@
 import React from 'react';
 import { Heart, Code, Shield, Mail, Phone, MapPin, Linkedin, Github, ExternalLink } from 'lucide-react';
+import logo from '../assets/logo.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -32,21 +33,22 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="flex flex-col items-center justify-center mt-6 mb-4">
               <div className="bg-white p-2 rounded-2xl shadow-lg flex items-center justify-center mb-2">
-                <img 
-                  src="/src/assets/logo.png" 
-                  alt="Vincent Makori Logo" 
+                <img
+                  src={`${import.meta.env.BASE_URL}logo.png`}
+                  alt="Vincent Makori Logo"
                   className="h-16 w-16 md:h-20 md:w-20 lg:h-24 lg:w-24 transition-all duration-300 mx-auto rounded-full"
+                  onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
                 />
               </div>
               <span className="text-2xl font-bold">Vincent Makori</span>
               <p className="text-slate-400 text-sm">Software Developer & Cybersecurity Enthusiast</p>
             </div>
             <p className="text-slate-400 leading-relaxed mb-6 max-w-md">
-              Final Year Computer Science Student passionate about building innovative 
-              software solutions and pursuing a career in cybersecurity. Always ready 
+              Final Year Computer Science Student passionate about building innovative
+              software solutions and pursuing a career in cybersecurity. Always ready
               to tackle new challenges and learn cutting-edge technologies.
             </p>
-            
+
             {/* Social Links */}
             <div className="flex space-x-4">
               <a
@@ -80,8 +82,8 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <a 
-                    href={link.href} 
+                  <a
+                    href={link.href}
                     className="text-slate-400 hover:text-cyan-400 transition-colors duration-200 flex items-center group"
                   >
                     <ExternalLink className="h-4 w-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -98,7 +100,7 @@ const Footer = () => {
             <ul className="space-y-4">
               {contactInfo.map((contact, index) => (
                 <li key={index}>
-                  <a 
+                  <a
                     href={contact.href}
                     className="flex items-center space-x-3 text-slate-400 hover:text-cyan-400 transition-colors duration-200 group"
                   >
@@ -131,9 +133,9 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex items-center space-x-2 text-slate-400">
               <span>© {currentYear} Vincent Makori. Made with</span>
-              <Heart className="h-4 w-4 text-red-500 animate-pulse" />
-              <span>and</span>
-              <Code className="h-4 w-4 text-cyan-400" />
+             
+              <span> Simbariu Tech Limited</span>
+              
               <span>in Kenya</span>
             </div>
             <div className="flex items-center space-x-4 text-slate-400">

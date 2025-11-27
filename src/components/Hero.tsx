@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowDown, Download, Mail, Github, Linkedin, MessageCircle, Sparkles, Code, Shield, Brain } from 'lucide-react';
+import heroImage from '../assets/HGASFJV.png';
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -15,7 +16,7 @@ const Hero = () => {
 
   useEffect(() => {
     setIsVisible(true);
-    
+
     const interval = setInterval(() => {
       setCurrentText((prev) => (prev + 1) % roles.length);
     }, 3000);
@@ -65,7 +66,7 @@ const Hero = () => {
           <div className="mb-8 mt-8 flex justify-center">
             <div className="relative">
               <img
-                src="/src/assets/HGASFJV.png"
+                src={heroImage}
                 alt="Vincent Makori"
                 className="w-auto h-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl object-contain object-center"
                 style={{ display: 'block', margin: '0 auto' }}
@@ -82,7 +83,7 @@ const Hero = () => {
               Hi, I'm{' '}
               <span className="gradient-text">Vincent Makori</span>
             </h1>
-            
+
             <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-slate-600 dark:text-slate-300 mb-6 md:mb-8 h-8 md:h-12 flex items-center justify-center px-4">
               <span className="mr-2">I'm a</span>
               <span className="gradient-text font-semibold min-w-[200px] sm:min-w-[250px] md:min-w-[300px]">
@@ -97,8 +98,8 @@ const Hero = () => {
             </div>
 
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-600 dark:text-slate-300 max-w-2xl sm:max-w-3xl md:max-w-4xl mx-auto mb-8 md:mb-12 leading-relaxed px-4">
-              Passionate about creating innovative solutions that bridge the gap between 
-              technology and security. Specializing in full-stack development, cybersecurity, 
+              Passionate about creating innovative solutions that bridge the gap between
+              technology and security. Specializing in full-stack development, cybersecurity,
               and artificial intelligence.
             </p>
 
@@ -131,6 +132,16 @@ const Hero = () => {
                 <span>Get In Touch</span>
               </a>
               <a
+                href={`${import.meta.env.BASE_URL}Vincent_Makori_Resume_Enhanced.docx`}
+                download="Vincent_Makori_Resume_Enhanced.docx"
+                className="button-secondary flex items-center space-x-2 text-sm md:text-base px-4 md:px-6 py-2 md:py-3"
+                aria-label="Download Resume"
+              >
+                <Download className="h-4 w-4 md:h-5 md:w-5" />
+                <span>Download Resume</span>
+              </a>
+
+              <a
                 href="#projects"
                 className="button-secondary flex items-center space-x-2 text-sm md:text-base px-4 md:px-6 py-2 md:py-3"
               >
@@ -158,10 +169,10 @@ const Hero = () => {
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-8 max-w-lg md:max-w-2xl mx-auto px-4">
               {[
-                { number: '3+', label: 'Years Experience' },
-                { number: '20+', label: 'Projects Completed' },
-                { number: '15+', label: 'Technologies' },
-                { number: '100%', label: 'Client Satisfaction' }
+                { number: '1+', label: 'Years Experience' },
+                { number: '8+', label: 'Projects Completed' },
+                { number: '6+', label: 'Technologies' },
+                { number: '60%', label: 'Client Satisfaction' }
               ].map((stat, index) => (
                 <div
                   key={stat.label}

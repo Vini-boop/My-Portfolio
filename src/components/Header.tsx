@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Code, User, Briefcase, Mail, Home, Sun, Moon } from 'lucide-react';
+import logo from '../assets/logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -63,7 +64,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <img 
-              src="/src/assets/logo.png" 
+              src={logo}
               alt="Vincent Makori Logo" 
               className="h-20 w-20 md:h-28 md:w-28 lg:h-32 lg:w-32 transition-all duration-300"
             />

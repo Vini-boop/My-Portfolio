@@ -70,8 +70,8 @@ const Contact = () => {
     },
     {
       icon: Facebook,
-      label: 'Facebook',
-      href: 'https://facebook.com/Vincent-makori',
+      label: 'Facebook • Vincent Makori (Brother)',
+      href: 'https://web.facebook.com/profile.php?id=100080250319567',
       color: 'hover:text-slate-900 hover:bg-slate-50'
     },
     {
@@ -105,8 +105,8 @@ const Contact = () => {
             <div>
               <h3 className="text-2xl font-bold text-slate-900 mb-6">Get in Touch</h3>
               <p className="text-slate-600 mb-8 leading-relaxed">
-                Whether you're looking for a passionate developer to join your team, 
-                want to collaborate on a project, or simply have questions about my work, 
+                Whether you're looking for a passionate developer to join your team,
+                want to collaborate on a project, or simply have questions about my work,
                 I'm always open to meaningful conversations.
               </p>
             </div>
@@ -142,7 +142,10 @@ const Contact = () => {
                     key={index}
                     href={social.href}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener noreferrer nofollow"
+                    referrerPolicy="no-referrer"
+                    aria-label={social.label}
+                    title={social.label}
                     className={`p-4 bg-slate-100 rounded-xl text-slate-600 ${social.color} transition-all duration-200 transform hover:scale-110 shadow-lg hover:shadow-xl`}
                   >
                     <social.icon className="h-6 w-6" />
@@ -157,8 +160,8 @@ const Contact = () => {
                 <h4 className="text-lg font-semibold">Available for Opportunities</h4>
               </div>
               <p className="text-slate-300 leading-relaxed">
-                I'm currently seeking internship opportunities and entry-level positions 
-                in software development and cybersecurity. Let's discuss how I can contribute 
+                I'm currently seeking internship opportunities and entry-level positions
+                in software development and cybersecurity. Let's discuss how I can contribute
                 to your team's success.
               </p>
               <div className="mt-4 flex items-center space-x-2">
@@ -174,7 +177,7 @@ const Contact = () => {
               <Send className="h-6 w-6 mr-3 text-cyan-600" />
               Send a Message
             </h3>
-            
+
             {isSubmitted && (
               <div className="mb-6 p-4 bg-emerald-50 border border-emerald-200 rounded-lg flex items-center space-x-2">
                 <CheckCircle className="h-5 w-5 text-emerald-600" />
