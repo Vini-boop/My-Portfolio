@@ -19,8 +19,8 @@ const Footer = () => {
   ];
 
   const contactInfo = [
-    { icon: Mail, label: 'vinmarmak21@gmail.com', href: 'vinmarmak21@gmail.com' },
-    { icon: Phone, label: '+254 14492024', href: 'tel:+254114492024' },
+    { icon: Mail, label: 'vinmarmak21@gmail.com', href: 'mailto:vinmarmak21@gmail.com' },
+    { icon: Phone, label: '+254 114 492 024', href: 'tel:+254114492024' },
     { icon: MapPin, label: 'Laikipia University, Kenya', href: '#' },
   ];
 
@@ -60,7 +60,7 @@ const Footer = () => {
                 <Linkedin className="h-5 w-5 group-hover:scale-110 transition-transform" />
               </a>
               <a
-                href="https://github.com/vincent-makori"
+                href="https://github.com/Vini-boop"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-slate-800 hover:bg-slate-700 rounded-lg text-slate-400 hover:text-cyan-400 transition-all duration-200 group"
@@ -68,7 +68,7 @@ const Footer = () => {
                 <Github className="h-5 w-5 group-hover:scale-110 transition-transform" />
               </a>
               <a
-                href="mailto:vincent.makori@example.com"
+                href="mailto:vinmarmak21@gmail.com"
                 className="p-3 bg-slate-800 hover:bg-slate-700 rounded-lg text-slate-400 hover:text-cyan-400 transition-all duration-200 group"
               >
                 <Mail className="h-5 w-5 group-hover:scale-110 transition-transform" />
@@ -133,9 +133,9 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex items-center space-x-2 text-slate-400">
               <span>© {currentYear} Vincent Makori. Made with</span>
-             
+
               <span> Simbariu Tech Limited</span>
-              
+
               <span>in Kenya</span>
             </div>
             <div className="flex items-center space-x-4 text-slate-400">
