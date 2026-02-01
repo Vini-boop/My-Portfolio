@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+/**
+ * Hero Section: precise introduction and call to action
+ */
 import { ArrowDown, Download, Mail, Github, Linkedin, MessageCircle, Sparkles, Code, Shield, Brain } from 'lucide-react';
 import heroImage from '../assets/HGASFJV.png';
 

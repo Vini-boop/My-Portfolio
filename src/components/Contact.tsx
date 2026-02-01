@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+/**
+ * Contact Section: form and social links
+ */
 import { Mail, Phone, MapPin, Linkedin, Github, Send, CheckCircle, MessageSquare, Calendar, MessageCircle, Facebook } from 'lucide-react';
 
 const Contact = () => {

@@ -1,4 +1,7 @@
 import React from 'react';
+/**
+ * About Section: educational background and bio
+ */
 import { GraduationCap, MapPin, Target, Heart, Award, Calendar } from 'lucide-react';
 
 const About = () => {
@@ -63,8 +66,8 @@ const About = () => {
                 <h3 className="text-2xl font-bold text-slate-900">Background</h3>
               </div>
               <p className="text-slate-600 leading-relaxed">
-                Growing up in Kisii County, I was drawn to the problem-solving power of technology. 
-                This early fascination led me to pursue computer science, where I've developed expertise 
+                Growing up in Kisii County, I was drawn to the problem-solving power of technology.
+                This early fascination led me to pursue computer science, where I've developed expertise
                 in multiple programming languages and discovered my passion for cybersecurity.
               </p>
             </div>
@@ -79,13 +82,13 @@ const About = () => {
                 <h3 className="text-2xl font-bold text-slate-900">Passion & Motivation</h3>
               </div>
               <p className="text-slate-600 leading-relaxed mb-4">
-                I'm passionate about leveraging technology to solve real-world problems. My interests span 
-                across software development, artificial intelligence, and cybersecurity. I believe in the 
-                power of code to create positive change and am constantly learning new technologies to 
+                I'm passionate about leveraging technology to solve real-world problems. My interests span
+                across software development, artificial intelligence, and cybersecurity. I believe in the
+                power of code to create positive change and am constantly learning new technologies to
                 stay at the forefront of innovation.
               </p>
               <p className="text-slate-600 leading-relaxed">
-                Currently, I'm actively involved in AI tools monitoring and exploring the intersection 
+                Currently, I'm actively involved in AI tools monitoring and exploring the intersection
                 of artificial intelligence and cybersecurity, preparing myself for the evolving tech landscape.
               </p>
             </div>
@@ -98,7 +101,7 @@ const About = () => {
                 <h3 className="text-2xl font-bold">Future Aspirations</h3>
               </div>
               <p className="leading-relaxed mb-6 text-slate-300">
-                My long-term goal is to become a cybersecurity professional, combining my software 
+                My long-term goal is to become a cybersecurity professional, combining my software
                 development skills with deep security expertise to protect digital assets and privacy.
               </p>
               <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700">

@@ -1,4 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
+/**
+ * Skills Section: technical expertise grid
+ */
 import { Code, Database, Shield, Brain, Wrench, Users, Zap, Globe, Smartphone, Palette, Target } from 'lucide-react';
 
 const Skills = () => {
@@ -94,8 +97,8 @@ const Skills = () => {
               key={category.id}
               onClick={() => setActiveCategory(category.id)}
               className={`flex items-center space-x-2 px-6 py-3 rounded-full font-medium transition-all duration-200 ${activeCategory === category.id
-                  ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg'
-                  : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-600'
+                ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg'
+                : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-600'
                 }`}
             >
               <category.icon className="h-4 w-4" />

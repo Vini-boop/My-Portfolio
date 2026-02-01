@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+/**
+ * Header Component: navigation and theme toggle
+ */
 import { Menu, X, Code, User, Briefcase, Mail, Home, Sun, Moon } from 'lucide-react';
 import logo from '../assets/logo.png';
 
@@ -19,7 +22,7 @@ const Header = () => {
     // Check for saved theme preference or default to light mode
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
+
     if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
       setIsDarkMode(true);
       document.documentElement.classList.add('dark');
@@ -54,18 +57,17 @@ const Header = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-white/95 backdrop-blur-md border-b border-slate-200/50 shadow-lg shadow-slate-900/10' 
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        ? 'bg-white/95 backdrop-blur-md border-b border-slate-200/50 shadow-lg shadow-slate-900/10'
         : 'bg-white/90 backdrop-blur-md border-b border-white/20'
-    }`}>
+      }`}>
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex items-center">
-            <img 
+            <img
               src={logo}
-              alt="Vincent Makori Logo" 
+              alt="Vincent Makori Logo"
               className="h-20 w-20 md:h-28 md:w-28 lg:h-32 lg:w-32 transition-all duration-300"
             />
           </div>
@@ -76,11 +78,10 @@ const Header = () => {
               <a
                 key={item.href}
                 href={item.href}
-                className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-200 group ${
-                  isScrolled 
-                    ? 'text-slate-700 hover:text-cyan-600 hover:bg-slate-100/50' 
+                className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-200 group ${isScrolled
+                    ? 'text-slate-700 hover:text-cyan-600 hover:bg-slate-100/50'
                     : 'text-slate-800 hover:text-cyan-600 hover:bg-white/20'
-                }`}
+                  }`}
               >
                 <item.icon className="h-4 w-4 group-hover:scale-110 transition-transform" />
                 <span className="font-medium">{item.label}</span>
@@ -114,9 +115,8 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className={`md:hidden p-2 rounded-lg transition-colors ${
-              isScrolled ? 'text-slate-700 hover:bg-slate-100' : 'text-slate-800 hover:bg-white/20'
-            }`}
+            className={`md:hidden p-2 rounded-lg transition-colors ${isScrolled ? 'text-slate-700 hover:bg-slate-100' : 'text-slate-800 hover:bg-white/20'
+              }`}
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
