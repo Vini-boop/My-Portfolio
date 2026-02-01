@@ -9,6 +9,8 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -17,11 +19,33 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setIsSubmitting(true);
+    setErrorMessage('');
+
+    try {
+      // REPLACE 'YOUR_FORM_ID_HERE' WITH YOUR ACTUAL FORMSPREE FORM ID
+      const response = await fetch("https://formspree.io/f/xkozgpva", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setTimeout(() => setIsSubmitted(false), 5000);
+      } else {
+        setErrorMessage('Something went wrong. Please try again later.');
+      }
+    } catch (error) {
+      setErrorMessage('Failed to send message. Please check your internet connection.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -29,7 +53,7 @@ const Contact = () => {
       icon: Mail,
       label: 'Email',
       value: 'vinmarmak21@gmail.com',
-      href: 'mailto:vincent.makori@example.com',
+      href: 'mailto:vinmarmak21@gmail.com',
       color: 'from-cyan-500 to-blue-600'
     },
     {
@@ -42,7 +66,7 @@ const Contact = () => {
     {
       icon: MessageCircle,
       label: 'WhatsApp',
-      value: '+254 114 492 02',
+      value: '+254 114 492 024',
       href: 'https://wa.me/254114492024',
       color: 'from-green-500 to-green-600'
     },
@@ -185,6 +209,12 @@ const Contact = () => {
               </div>
             )}
 
+            {errorMessage && (
+              <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center space-x-2">
+                <span className="text-red-800">{errorMessage}</span>
+              </div>
+            )}
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
@@ -253,9 +283,10 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full px-4 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-colors"
+                disabled={isSubmitting}
+                className={`w-full px-4 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-colors ${isSubmitting ? 'opacity-75 cursor-not-allowed' : ''}`}
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </div>
